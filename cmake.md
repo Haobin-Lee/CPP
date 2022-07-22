@@ -28,10 +28,13 @@ cmake_minimum_required(VERSION 3.10.0)
 set(TARGET_NAME test)
 
 #项目名字为test，编程语言为C++
-project(${TARGET_NAME} CXX)
+project(${TARGET_NAME} LANGUAGES CXX)
 
 #将 CMAKE_CURRENT_SOURCE_DIR 和 CMAKE_CURRENT_BINARY_DIR 添加到每一个文件夹，但不会传递到子目录。
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
+
+# 导入Qt组件
+find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
 #对于Qt targets，自动处理uic、moc、rcc
 set(CMAKE_AUTOUIC ON)
